@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" oncontextmenu="return false">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://www.elevenforum.com/data/attachments/85/85432-ce8ee5d1ce194dbda7cc56c4ebdb5393.jpg" type="image/x-icon">
+<title>System</title>
+<style>
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Gilroy-Regular', sans-serif;
+}
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100vh;
+overflow: hidden;
+box-sizing: border-box;
+background-color: #1c1c1d;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+user-select: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-khtml-user-select: none;
+-ms-user-select: none;
+}
+.prompt {
+position: absolute;
+padding: 25px;
+width: 400px;
+border-radius: 4px;
+background-color: #252828;
+}
+.prompt .switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 28px;
+}
+.prompt .switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.prompt .slider {
+position: absolute;
+background-color: #333334;
+border-radius: 28px;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+transition: 0.4s;
+}
+.prompt .slider:before {
+position: absolute;
+content: "";
+height: 22px;
+width: 22px;
+left: 3px;
+bottom: 3px;
+background-color: #3b3d3e;
+border-radius: 50%;
+transition: 0.4s;
+}
+.prompt input:checked + .slider {
+background-color: #0078d4;
+}
+.prompt input:checked + .slider:before {
+transform: translateX(22px);
+}
+.prompt button {
+padding: 8px;
+width: 100%;
+outline: none;
+border: none;
+border-bottom: 2px solid #106ebe;
+border-radius: 4px;
+font-size: 18px;
+font-weight: 500;
+margin: 10px 0;
+background-color: #0078d4;
+color: #e2e5ca;
+}
+.prompt button:hover {
+background-color: #106ebe;
+}
+</style>
+<body>
+<div class="prompt">
+<label class="switch">
+<input type="checkbox" id="checkbox">
+<span class="slider">
+</span>
+</label>
+<br>
+<button id="buttonclick" onclick="clickbutton()" disabled>
+Enter FB
+</button>
+</div>
+<audio id="music">
+<source src="song.mp3">
+</audio>
+</body>
+<script>
+const checkbox = document.getElementById("checkbox");
+const button = document.getElementById("buttonclick");
+checkbox.addEventListener('change', function () {
+button.disabled = !this.checked;
+}
+)
+function clickbutton() {
+document.getElementById("buttonclick").disabled = true;
+document.getElementById("checkbox").disabled = true;
+document.getElementById("music").play();
+setTimeout(() => {
+window.location.href = "https://www.facebook.com";
+}, 237000);
+}
+</script>
+</head>
+</html>
